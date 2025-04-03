@@ -1,9 +1,10 @@
 # coding: utf-8
 '''
-腐小说小说下载
 仅限用于研究代码
 勿用于商业用途
 请于24小时内删除
+
+使用异步协程的爬取方式--完整版
 安装依赖命令：
 ./.venv/bin/python -m pip install beautifulsoup4 colorama termcolor readchar requests
 安装异步协程爬取依赖
@@ -34,7 +35,7 @@ baseUrl = 'https://fuxs1.com/'
 # 书籍类型
 catalog = 'chuanyue'
 # 书籍ID
-book_id = 22172
+book_id = 24105
 # 章节列表
 chapters_list = []
 # 请求头
@@ -131,7 +132,6 @@ async def main():
     print(colored('已搜索完毕！',choice(FGS)))
     print(colored('x:全部下载',choice(FGS)))
     print(colored('q:退出阅读',choice(FGS)))
-    print("Press 'q' or 'x' to continue...")
     # 定义键盘输入
     my_key = ['q','x']
 
@@ -139,7 +139,7 @@ async def main():
     # 等待用户输入
     while move not in my_key:
         move = readkey()
-        print(colored('请按下 q 或 x 键', choice(FGS)))
+        print(colored('请按下 x 或 q 键继续', choice(FGS)))
     # 根据用户输入执行操作
     if move == 'q':  # 用户按下 'q' 键退出
         print(colored("退出程序", choice(FGS)))
