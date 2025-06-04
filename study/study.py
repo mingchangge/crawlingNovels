@@ -230,9 +230,21 @@ t=(1,2,3)
 d[t]='abc'
 print(d) # 输出：{'a': 1, 'b': 2, 'c': 3, (1, 2, 3): 'abc'}
 t1=(1,[2,3])
-# d[t1]='abc'
-# print(d) # 输出报错：Traceback (most recent call last):... d[t1]='abc' TypeError: unhashable type: 'list'
+# d[t1]='abc'# 报错：Traceback (most recent call last):... d[t1]='abc' TypeError: unhashable type: 'list'
 s2.add(t)
 print(s2) # 输出：{2, 3, 4, (1, 2, 3)}
-s2.add(t1)
-print(s2) # 输出报错：Traceback (most recent call last):...s2.add(t1) TypeError: unhashable type: 'list'
+#s2.add(t1) # 报错：Traceback (most recent call last):...s2.add(t1) TypeError: unhashable type: 'list'
+print('------------------------------------------函数--------------------------------------------------------------')
+print(int('123')) # 输出：123
+print(int(12.34)) # 输出：12
+print(int('123', base=8)) # 输出：83
+print(int('123', base=16)) # 输出：291
+# print(int('123', base=2)) # 报错：Traceback (most recent call last):... print(int('123', base=2))...ValueError: invalid literal for int() with base 2: '123'
+print(int('10', base=2)) # 输出：2
+print(int('123', base=10)) # 输出：123
+print(float('123.456')) # 输出：123.456
+print(float(12)) # 输出：12.0
+print(str(123)) # 输出：'123'
+print(str(12.34)) # 输出：'12.34'
+print(bool(1)) # 输出：True
+print(bool(0)) # 输出：False
